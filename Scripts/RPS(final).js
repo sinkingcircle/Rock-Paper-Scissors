@@ -96,8 +96,12 @@ window.onload = function(){
     localStorage.setItem('display-under-images',`${result}`);
 
 
-
-    document.querySelector('.Result').innerHTML = `You ${result}ed`;
+    if(result == "tie"){
+        document.querySelector('.Result').innerHTML = `You ${result}d`;
+    }
+    else{
+    document.querySelector('.Result').innerHTML = `You ${result}`;
+    }
     document.querySelector('.Moves').innerHTML =   `you <img src="${playermove}-emoji.png " class = "rock"> 
     <img src="${computermove}-emoji.png " class = "rock"> Computer`;
     document.querySelector('.dubs').innerHTML = `Wins: ${score.wins},Loses: ${score.losses},Ties: ${score.ties},`;
